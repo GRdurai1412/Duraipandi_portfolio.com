@@ -1,20 +1,19 @@
 import React, { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";  // <-- Import HashRouter
 import Home from "./pages/Home";
 import Notfound from "./pages/Notfound";
 import "./index.css";
 
 const App = () => (
-  <BrowserRouter>
+  <HashRouter>
     <Routes>
       <Route index element={<Home />} />
       <Route path="*" element={<Notfound />} />
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
 );
 
-// Render directly inside this file
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />
